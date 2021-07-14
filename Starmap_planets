@@ -1,0 +1,42 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+string planet;
+class starmap
+{
+public:
+	void planet_listing(int);
+	void planet_choice(char);
+};
+
+void starmap::planet_listing(int choice) //Doet niks met choice
+{
+	//Display List planets
+	int i = 0;
+	string planet[] = { "Brin", "Saal", "Raadt", "Telphi", "Syge" };
+	cout << "Choose a Planet:" << "\n";
+	//actually I want a dynamic array that can call up the values from other functions, but this should work
+	int c;
+    cin >> c;
+    c = c - 1;
+    if (c >=0 && c<= 4)
+    {
+    cout << "You chose " << planet[c] << "\n";
+    }
+    else
+    {
+        cout << "Wrong Answer." << "\n";
+    }
+
+void starmap::planet_choice(char choice)
+{
+}
+
+int main()
+{
+	int p = 0;
+	starmap starsystem;
+	starsystem.planet_listing(p); //p doet niks, p = 0, maar choice (in void starmap::planet_listing) wordt nog niet gebruikt
+	//starsystem.planet_choice(p);
+	return 0;
+}
